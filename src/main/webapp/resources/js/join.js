@@ -66,11 +66,15 @@ $(document).ready(function() {
 			emailCheck = true;
 		}
 		
+		if(idckCheck === false) {
+			alert("아이디 중복체크를 해주세요.");
+			return;
+		} else {
+				//$('#join-form').attr("action", "/member/memberJoin");
+				//$('#join-form').attr("method", "post");
+				//$('#join-form').submit();
+		}
 		
-		
-		//$('#join-form').attr("action", "/member/memberJoin");
-		//$('#join-form').attr("method", "post");
-		//$('#join-form').submit();
 	});
 });
 
@@ -118,7 +122,6 @@ $('#pw_input_check').on('propertychange change keyup paste input', function() {
 		$('.pwck_feedback1').css('display', 'none');
 		$('.pwck_feedback2').css('display', 'none');
 	}
-
 });
 
 // 이메일 인증 전송

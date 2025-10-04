@@ -43,10 +43,10 @@ public class MemberController {
 	@ResponseBody
 	public String postMethodName(String memberId) throws Exception {
 		
-		log.info("memberIdChk");
+		log.info("memberIdChk : " + memberId);
 		
 		int result = memberService.memberIdChk(memberId);
-		log.info("결과값 : " + result);
+		log.info("result : " + result);
 		
 		if(result != 0) {
 			return "fail";
@@ -55,5 +55,21 @@ public class MemberController {
 		}
 	}
 	
+	// @postMapping("/member/memberLogin")
+	// @ResponseBody
+	// public String postMemberLogin(MemberVO member) throws Exception {
+		
+	// 	log.info("memberLogin : " + member);
+		
+	// 	MemberVO login = memberService.memberLogin(member);
+		
+	// 	log.info("login : " + login);
+		
+	// 	if(login != null) {
+	// 		return "success";
+	// 	} else {
+	// 		return "fail";
+	// 	}
+	// }
 	
 }

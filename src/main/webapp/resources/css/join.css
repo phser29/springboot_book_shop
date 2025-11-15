@@ -71,6 +71,11 @@ body {
 	display: none;
 }
 
+.name_feedback {
+	color: red;
+	display: none;
+}
+
 .addr_feedback {
 	color: red;
 	display: none;

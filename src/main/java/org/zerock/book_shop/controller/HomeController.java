@@ -12,7 +12,7 @@ public class HomeController {
 	
 	@GetMapping("/index")
 	public void index() {
-		log.info("홈으로 진입");
+		log.info("home comming");
 	}
 	
 	

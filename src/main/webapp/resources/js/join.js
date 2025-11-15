@@ -5,7 +5,7 @@ let pwchCheck = false;
 let nameCheck = false;
 let emailCheck = false;
 let emailckCheck = false;
-let addressCheck = false;
+let addrCheck = false;
 
 let code = "";
 
@@ -62,19 +62,28 @@ $(document).ready(function() {
 			$('.email_feedback').css('display', 'block');
 			emailCheck = false;
 		} else {
-			$('.name_feedback').css('display', 'none');
+			$('.email_feedback').css('display', 'none');
 			emailCheck = true;
 		}
 		
+		if(addr3 === "") {
+			$('.addr_feedback').css('display', 'block');
+			addrCheck = false;
+		} else {
+			$('.addr_feedback').css('display', 'none');
+			addrCheck = true;
+		}
+
 		if(idckCheck === false) {
 			alert("아이디 중복체크를 해주세요.");
 			return;
-		} else {
-				//$('#join-form').attr("action", "/member/memberJoin");
-				//$('#join-form').attr("method", "post");
-				//$('#join-form').submit();
 		}
 		
+		if(idCheck !== false && pwCheck !== false && pwchCheck !== false && nameCheck !== false && emailCheck !== false && addrCheck !== false && idckCheck !== false) {
+			$('#join-form').attr("action", "/member/memberJoin");
+			$('#join-form').attr("method", "post");
+			$('#join-form').submit();
+		}
 	});
 });
 
@@ -126,10 +135,11 @@ $('#pw_input_check').on('propertychange change keyup paste input', function() {
 
 // 이메일 인증 전송
 $("#emailsend").on('click', function() {
-
-	const email = $('#memberEmail').val();
+	const email = $('.member_email').val();
 	const emailcft = $('#emailcft');
 	const boxWrap = $('.mail_check_input_box');
+
+	console.log(email);
 
 	$.ajax({
 		type: "get",

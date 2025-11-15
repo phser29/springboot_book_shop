@@ -54,7 +54,7 @@ public class MailService {
 			javaMailSender.send(message);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new IllegalArgumentException("메일 발송 중 오류가 발생했습니다.");
+			throw new IllegalArgumentException("mail sending error.");
 		}
 		
 		return number;

@@ -19,22 +19,22 @@ public class MemberController {
 	
 	@GetMapping("/member/login")
 	public void login() {
-		log.info("로그인 진입");
+		log.info("memberLogin");
 	}
 	
 	@GetMapping("/member/join")
 	public void join() {
-		log.info("회원가입 진입");
+		log.info("memberJoin");
 	}
 	
 	@PostMapping("/member/memberJoin")
 	public String postMethodName(MemberVO member) throws Exception {
 		
-		log.info("join 통과");
+		log.info("join");
 		
 		memberService.memberJoin(member);
 		
-		log.info("join service 통과");
+		log.info("join service");
 		
 		return "redirect:/index";
 	}

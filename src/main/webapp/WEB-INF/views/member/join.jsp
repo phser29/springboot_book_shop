@@ -26,8 +26,8 @@
 				<h4 class="mb-3">회원가입</h4>
 				<form id="join-form">
 					<div class="mb-3">
-						<label for="id_input">ID</label> <input type="text"
-							class="form-control" id="id_input" placeholder="ID" required>
+						<label for="id_input">ID</label> 
+						<input type="text" name="memberId" class="form-control" id="id_input" placeholder="ID" required>
 						<div class="id_feedback">ID을 입력해주세요.</div>
 						<span class="id_input_re_1">사용 가능한 아이디입니다.</span> 
 						<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
@@ -35,7 +35,7 @@
 
 					<div class="mb-3">
 						<label for="pw_input">비밀번호</label> 
-						<input type="password" class="form-control" id="pw_input" placeholder="PW" required>
+						<input type="password" name="memberPw" class="form-control" id="pw_input" placeholder="PW" required>
 						<div class="pw_feedback">비밀번호를 입력해주세요.</div>
 					</div>
 
@@ -48,7 +48,7 @@
 
 					<div class="mb-3">
 						<label for="name_input">이름</label> 
-						<input type="text" class="form-control" id="name_input" placeholder="name" required>
+						<input type="text" name="memberName" class="form-control" id="name_input" placeholder="name" required>
 						<div class="name_feedback">이름을 입력해주세요.</div>
 					</div>
 
@@ -57,31 +57,28 @@
 						<button class="inputButton" id="emailsend" type="button">인증번호
 							전송</button>
 						<div class="mail_input_box">
-							<input type="text" class="form-control" id="email_input" placeholder="you@example.com" required>
-						</div>
-						<div class="mail_check_input_box" id="mail_check_input_box_false">
-							<input type="text" class="form-control" id="emailcft"
-								placeholder="인증번호" required>
+							<input type="text" name="memberMail" class="form-control member_email" id="email_input" placeholder="you@example.com" required>
 						</div>
 						<div class="email_feedback">이메일을 입력해주세요.</div>
+						<div class="mail_check_input_box" id="mail_check_input_box_false">
+							<input type="text" class="form-control" id="emailcft" placeholder="인증번호" required>
+						</div>
 						<span id="mail_check_input_box_warn"></span>
 					</div>
 
 					<div class="mb-3">
 						<label for="memberAddr">주소</label>
 						<button onclick="daum_address()" type="button" class="inputButton">주소찾기</button>
-						<input type="text" class="form-control" id="addr1_input" placeholder="우편번호" readonly="readonly"> 
-						<input type="text" class="form-control" id="addr2_input" placeholder="서울특별시 강남구" readonly="readonly"> 
-						<input type="text" class="form-control" id="addr3_input" placeholder="상세주소를 입력해주세요.">
+						<input type="text" name="memberAddr1" class="form-control" id="addr1_input" placeholder="우편번호" readonly="readonly"> 
+						<input type="text" name="memberAddr2" class="form-control" id="addr2_input" placeholder="서울특별시 강남구" readonly="readonly"> 
+						<input type="text" name="memberAddr3" class="form-control" id="addr3_input" placeholder="상세주소를 입력해주세요.">
 						<div class="addr_feedback">주소를 입력해주세요.</div>
 					</div>
 
 					<hr class="mb-4">
 					<div class="custom-control custom-checkbox">
-						<input type="checkbox" onclick="check()"
-							class="custom-control-input" id="aggrement" required> <label
-							class="custom-control-label" for="aggrement">개인정보 수집 및
-							이용에 동의합니다.</label>
+						<input type="checkbox" class="custom-control-input" id="aggrement" required> 
+						<label class="custom-control-label" for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
 					</div>
 					<div class="mb-4"></div>
 					<button class="join_button btn btn-primary btn-lg btn-block"

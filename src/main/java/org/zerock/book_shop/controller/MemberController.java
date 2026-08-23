@@ -1,6 +1,5 @@
 package org.zerock.book_shop.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.zerock.book_shop.dto.MemberVO;
@@ -14,8 +13,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Log4j2
 public class MemberController {
 
-	@Autowired
-	private MemberService memberService;
+	private final MemberService memberService;
+
+	MemberController(MemberService memberService) {
+		this.memberService = memberService;
+	}
 	
 	@GetMapping("/member/login")
 	public void login() {

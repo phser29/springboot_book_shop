@@ -29,6 +29,12 @@
 		WHERE memberId = #{memberId}
 	</select>
 	
-	
+	<select id="memberLogin" resultType="org.zerock.book_shop.domain.MemberVO">
+		SELECT 
+			memberId, memberPw, memberName, memberMail, memberAddr1, memberAddr2, memberAddr3, memberPoint
+		FROM
+			book_member
+		WHERE memberId = #{memberId} AND memberPw = #{memberPw}
+	</select>
 	
 </mapper>
